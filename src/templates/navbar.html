@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% url 'products:main-products-view' as path_to_performance %}
+{% url 'products:add-purchase-view' as path_to_adding_records %}
+{% url 'products:sales-view' as path_to_sales %}
+{% url 'csvs:upload-view' as path_to_upload %}
 
-</body>
-</html>
+
+<div class="ui secondary pointing menu">
+    <a class="item active" style="font-size: 14px !important; line-height: 14px !important;">
+        Home
+    </a>
+    <a href={{path_to_performance}} class="{% if request.path == path_to_performance%}active{% endif %} item">
+        Performance
+    </a>
+    <a href={{path_to_adding_records}} class=" {% if request.path == path_to_adding_records%}active{% endif %}item">
+        Add records
+    </a>
+    <a href={{path_to_sales}} class="{% if request.path == path_to_sales%}active{% endif %}item">
+        Sales view
+    </a>
+    <a href={{path_to_upload}} class="item {% if request.path == path_to_upload%}active{% endif %}">
+        Upload file
+    </a>
+    <div class="right menu" style="font-size: 14px !important; line-height: 20px !important;">
+        <a class="ui item" style="font-size: 14px !important; line-height: 14px !important;">
+            Logout
+        </a>
+    </div>
+</div>
+
+
