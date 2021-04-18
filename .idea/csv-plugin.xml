@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\products\templates\products\sales.html">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\products\urls.py">
           <value>
             <Attribute>

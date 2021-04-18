@@ -32,34 +32,6 @@ def sales_dist_view(request):
     # return HttpResponse("hello salesman")
     return render(request, 'products/sales.html', {'graph': graph})
 
-
-def chart_select_view0(request):
-    product_df = pd.DataFrame(Product.objects.all().values())
-    purchase_df = pd.DataFrame(Purchase.objects.all().values())
-    product_df['product_id'] = product_df['id']
-    df = pd.merge(purchase_df, product_df, on='product_id').drop(['id_y','date_y'],axis=1).rename({'id_x':'id', 'date_x':'date'},axis=1)
-
-    print(purchase_df.shape)
-
-    if request.method == 'POST':
-        chart_type = request.POST.get('sales')
-        date_from = request.POST['date_from']
-        date_to = request.POST['date_to']
-        print(chart_type)
-        print(date_from)
-        print(date_to)
-
-
-    context = {
-        'products': product_df.to_html(),
-        'purchase': purchase_df.to_html(),
-        'df': df.to_html()
-    }
-
-    return render(request, 'products/main.html', context)
-
-
-
 @login_required
 def chart_select_view(request):
     graph = None
