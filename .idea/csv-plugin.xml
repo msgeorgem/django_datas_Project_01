@@ -45,6 +45,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\src\forms.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\src\templates\base.html">
           <value>
             <Attribute>
